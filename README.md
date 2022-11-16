@@ -52,5 +52,33 @@
 - initialize the npm inside our project by executing the below command
 - `npm init -y`
 - second we need to install the express(a nodejs framework) inside our folder where we initialized the npm.
+- create `app.js` file inside the folder.
+- Next we need to import or `require` express inside the `app.js` and assign it to the `const app` because we can easily use it latter inside our project
 
--
+- install the package called as `nodemon` as dev dependencies to restart the server automatically whenever we make changes to the source code
+
+- To see the output we first need to listen on the certain ports in the browser for that we need to use
+  `app.listen(port,function(req,res){console.log(`server started on port ${PORT}`)})`
+
+- To check the output we need to setup the basic home route "/"
+  `app.get("/",function(req,res) {res.send("Hello")})`
+
+- In the `package.json` give the below `key:value` inside the `scripts` object
+
+  - `"start": "nodemon app.js"`
+
+- In the terminal give the command `npm start` to start the server at port number 3000 you can see the output inside the browser.
+
+![hell-server](./images/Hello-Server.PNG)
+
+## Connecting to Database
+
+- Remember in the previous section i mentioned servers can't do all of the things they fetch the information from the `database` .
+
+![client-api-server-database](./images/client-api-server-databse.png)
+
+- In this project i am using mongodb as the database for storing the information.
+
+- We need to install `mongoose` mongoose is the Object Data Modeling(ODM) library for MongoDB and Node.js.
+
+- `npm i mongoose`
