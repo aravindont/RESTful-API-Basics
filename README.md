@@ -82,3 +82,11 @@
 - We need to install `mongoose` mongoose is the Object Data Modeling(ODM) library for MongoDB and Node.js.
 
 - `npm i mongoose`
+
+- Create the connection to the database by `require` the mongoose inside the `app.js` file
+
+- And we need to create the schema for our database and model around the schema to do that create folder called `model` and create a `database.js ` file to create schema inside it.
+
+- Export the model created in the `database.js` file using `module.exports=model name` and import it inside the `app.js` file
+
+- If you start the server it might give error make sure to run the `mongod` command in another terminal to start the server.
