@@ -90,3 +90,22 @@
 - Export the model created in the `database.js` file using `module.exports=model name` and import it inside the `app.js` file
 
 - If you start the server it might give error make sure to run the `mongod` command in another terminal to start the server.
+
+## CRUD Operations
+
+### GET all articles from wikiDB it is R(READ) in CRUD
+
+- To get all the articles stored in the `wikiDB` database we need to write the `get` method to fetch from the database at the route `/articles`
+
+### POST one article to the database it is C(CREATE) in CRUD
+
+- To add the article to the database we need to write `post` method to the database as mentioned in the `app.js`.
+
+- To post the the data from the browser easy not easy so we are using tool called as `POSTMAN` that makes our life easier.
+
+### DELETE all the articles in the wikiDB it is D(DELETE) in CRUD
+
+- To DELETE The articles or any other data from database we need to write
+  `delete` method and include below query inside the callback function.
+
+- `<model name>.deleteMany(function(err){})`.

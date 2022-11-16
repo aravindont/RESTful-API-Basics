@@ -16,10 +16,33 @@ database().then(console.log("connected to DB"))
 
 const Article=require('./models/database');
 
-app.get("/",async function(req,res) {
+app.get("/articles",async function(req,res) {
     const data=await Article.find();
-    res.send(data);
-   
-})
+    res.status(200).json(data);
+});
+
+app.post("/articles",async function(req,res){
+    const newArticle=new Article({
+        title:req.body.title,
+        content:req.body.content
+    })
+    newArticle.save(function(err){
+        if(err){
+            res.send(err);
+        }
+        else{
+            res.send("added successfully");
+        }
+    });
+});
+app.delete("/articles",async function(req,res){
+    Article.deleteMany(function(err){
+        if(err){
+            res.send(err)
+        }else{
+            res.send("successfully deleted the all articles")
+        }
+    });
+});
 module.exports=app
 
