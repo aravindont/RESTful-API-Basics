@@ -109,3 +109,23 @@
   `delete` method and include below query inside the callback function.
 
 - `<model name>.deleteMany(function(err){})`.
+
+### Chained route
+
+- We can chain the all the `get() put() post() delete()` to the perticular route so that we can make reduce code redudancy
+
+- For example `app.route('/routeName').get().put().post().delete().patch()`.
+
+### CRUD to perticular article
+
+- For GET operation we need to give the below mongoose query
+  `<model name>.find({condition},function(){})`
+
+- For PUT operation we need to give the below mongoose query
+  `<model name>.update({condition},{content},function(err){} )`
+
+- For PATCH operation we need to give the below mongoose query
+  `<model name>.update({condition},{$set:content},function(err){})`
+
+- For DELETE operation we need to give the below mongoose query
+  `<model name>.findOneAndDelete({condition},function(err){})`
